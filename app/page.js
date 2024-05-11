@@ -1,5 +1,17 @@
-import Image from "next/image";
+import getPostMetaData from "@/utils/getPostMetadata";
 
 export default function Home() {
-  return <main></main>;
+  const postMetaData = getPostMetaData("physics");
+
+  return (
+    <main>
+      {postMetaData.map((chapter, chapterIndex) => {
+        return (
+          <div key={chapterIndex}>
+            <a href={`/physics/${chapter.slug}`}>{`${chapter.title}`}</a>
+          </div>
+        );
+      })}
+    </main>
+  );
 }
