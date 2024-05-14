@@ -1,17 +1,21 @@
-import getPostMetaData from "@/utils/getPostMetadata";
+import getFolderList from "@/utils/getFoldersList";
+import Link from "next/link";
+// import getPostMetaData from "@/utils/getPostMetadata";
 
 export default function Home() {
-  const postMetaData = getPostMetaData("physics");
-
+  // const postMetaData = getPostMetaData("notes");
+  const folders = getFolderList("notes");
   return (
-    <main>
-      {postMetaData.map((chapter, chapterIndex) => {
+    <div>
+      <h1>Home Page</h1>
+      <h1>List of Subjects: </h1>
+      {folders.map((notes, notesIndex) => {
         return (
-          <div key={chapterIndex}>
-            <a href={`/physics/${chapter.slug}`}>{`${chapter.title}`}</a>
+          <div key={notesIndex}>
+            <a href={`/${notes}`}>{`${notes}`}</a>
           </div>
         );
       })}
-    </main>
+    </div>
   );
 }

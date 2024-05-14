@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.h1-note {
+		@apply text-3xl font-bold my-4;
+	}
+
+	.h2-note {
+		@apply text-2xl font-semibold my-3;
+	}
+
+	.h3-note {
+		@apply text-xl font-semibold my-2;
+	}
+
+	.h4-note,
+	.h5-note,
+	.h6-note {
+		@apply text-lg font-semibold my-1;
+	}
+
+	.p-note {
+		@apply my-2 leading-relaxed;
+	}
+
+	.a-note {
+		@apply text-blue-600 underline;
+	}
+
+	.ul-note,
+	.ol-note {
+		@apply list-inside list-disc pl-5 my-2;
+	}
+
+	.ol-note {
+		@apply list-decimal;
+		/* This will enhance the earlier .ol-note */
+	}
+
+	.blockquote-note {
+		@apply pl-4 border-l-4 border-gray-300 italic my-4;
+	}
+
+	.code-note {
+		@apply bg-gray-200 rounded p-1 text-sm;
+	}
+
+	.pre-note {
+		@apply bg-gray-800 text-white text-sm p-4 overflow-x-auto;
+	}
+
+	.img-note {
+		@apply my-4 mx-auto;
+	}
+
+	.table-note {
+		@apply min-w-full divide-y divide-gray-300 my-4;
+	}
+
+	.th-note,
+	.td-note {
+		@apply text-left py-2 px-4 border-b border-gray-300;
+	}
+
+}
